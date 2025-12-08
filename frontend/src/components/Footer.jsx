@@ -1,5 +1,6 @@
 import React from 'react';
-import { Code2, Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Code2, Github, Linkedin, Mail, Heart, Phone } from 'lucide-react';
 import { personalInfo } from '../data/mockData';
 
 const Footer = () => {
@@ -28,71 +29,103 @@ const Footer = () => {
         <div className="py-12 lg:py-16">
           <div className="grid md:grid-cols-3 gap-12">
             {/* Brand */}
-            <div className="space-y-4">
-              <a href="#hero" onClick={(e) => scrollToSection(e, '#hero')} className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center">
+            <motion.div 
+              className="space-y-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <a href="#hero" onClick={(e) => scrollToSection(e, '#hero')} className="flex items-center gap-2 group">
+                <motion.div 
+                  className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                >
                   <Code2 className="w-5 h-5 text-white" />
-                </div>
+                </motion.div>
                 <span className="text-white font-semibold text-lg">
                   Dawit<span className="text-cyan-400">.</span>dev
                 </span>
               </a>
               <p className="text-gray-500 text-sm max-w-xs">
-                Software Developer passionate about building beautiful, functional web applications that solve real problems.
+                Full-Stack & Mobile Developer passionate about building beautiful, functional applications that solve real problems.
               </p>
-            </div>
+              <p className="text-gray-600 text-sm">
+                {personalInfo.location}
+              </p>
+            </motion.div>
 
             {/* Quick Links */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
               <h3 className="text-white font-medium mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <a
+                    <motion.a
                       href={link.href}
                       onClick={(e) => scrollToSection(e, link.href)}
-                      className="text-gray-500 hover:text-white transition-colors duration-200 text-sm"
+                      className="text-gray-500 hover:text-cyan-400 transition-colors duration-200 text-sm"
+                      whileHover={{ x: 5 }}
                     >
                       {link.name}
-                    </a>
+                    </motion.a>
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* Contact & Social */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <h3 className="text-white font-medium mb-4">Connect</h3>
               <div className="space-y-3">
                 <a
                   href={`mailto:${personalInfo.email}`}
-                  className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors duration-200 text-sm"
+                  className="flex items-center gap-2 text-gray-500 hover:text-cyan-400 transition-colors duration-200 text-sm"
                 >
                   <Mail className="w-4 h-4" />
                   {personalInfo.email}
                 </a>
+                <a
+                  href={`tel:${personalInfo.phone}`}
+                  className="flex items-center gap-2 text-gray-500 hover:text-cyan-400 transition-colors duration-200 text-sm"
+                >
+                  <Phone className="w-4 h-4" />
+                  {personalInfo.phone}
+                </a>
                 <div className="flex gap-3 pt-2">
-                  <a
+                  <motion.a
                     href={personalInfo.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-200"
+                    className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-cyan-400 hover:bg-white/10 transition-all duration-200"
                     aria-label="GitHub"
+                    whileHover={{ y: -3, scale: 1.1 }}
                   >
                     <Github className="w-5 h-5" />
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href={personalInfo.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-200"
+                    className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-cyan-400 hover:bg-white/10 transition-all duration-200"
                     aria-label="LinkedIn"
+                    whileHover={{ y: -3, scale: 1.1 }}
                   >
                     <Linkedin className="w-5 h-5" />
-                  </a>
+                  </motion.a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
@@ -103,7 +136,7 @@ const Footer = () => {
               © {currentYear} Dawit Tesfaye. All rights reserved.
             </p>
             <p className="flex items-center gap-1 text-gray-600 text-sm">
-              Built with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> using React & TailwindCSS
+              Built with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> using React & Tailwind
             </p>
           </div>
         </div>
