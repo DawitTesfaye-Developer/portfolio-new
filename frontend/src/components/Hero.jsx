@@ -4,6 +4,8 @@ import { Button } from './ui/button';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { personalInfo } from '../data/mockData';
 
+const profileImage = "https://dawit-me.onrender.com/static/media/T.43b8b659edf06fcca27b.png";
+
 const Hero = () => {
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
