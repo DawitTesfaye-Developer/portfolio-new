@@ -11,7 +11,7 @@ export const personalInfo = {
   location: "Addis Ababa, Ethiopia",
   github: "https://github.com/dawit-tesfaye",
   linkedin: "https://www.linkedin.com/in/dawit-tesfaye-hatau-60a17b311",
-  bio: "Full-Stack & Mobile Developer with a passion for building beautiful, functional web and mobile applications. Computer Science graduate specializing in Learning Experience Design.",
+  bio: "Full-Stack & Mobile App Developer with a passion for building beautiful, functional web and mobile applications. Computer Science graduate specializing in Learning Experience Design.",
   resumeLink: "#"
 };
 

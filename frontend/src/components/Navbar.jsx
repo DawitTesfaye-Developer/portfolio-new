@@ -33,11 +33,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[#0A0A0A]/90 backdrop-blur-lg border-b border-white/5'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-[#0A0A0A]/90 backdrop-blur-lg border-b border-white/5'
+        : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -47,12 +46,13 @@ const Navbar = () => {
             onClick={(e) => scrollToSection(e, '#hero')}
             className="flex items-center gap-2 group"
           >
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-              <Code2 className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-white font-semibold text-lg tracking-tight hidden sm:block">
+            <img 
+              src="/logo.png" 
+              alt="well" 
+              className="w-32 h-32 sm:w-24 sm:h-24" />
+            {/* <span className="text-white font-semibold text-lg tracking-tight hidden sm:block">
               Dawit<span className="text-cyan-400">.</span>dev
-            </span>
+            </span> */}
           </a>
 
           {/* Desktop Navigation */}
@@ -92,9 +92,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-[#0A0A0A]/95 backdrop-blur-lg border-b border-white/5 transition-all duration-300 ${
-          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className={`md:hidden absolute top-full left-0 right-0 bg-[#0A0A0A]/95 backdrop-blur-lg border-b border-white/5 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
       >
         <div className="px-6 py-4 space-y-1">
           {navLinks.map((link) => (

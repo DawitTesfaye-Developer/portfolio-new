@@ -29,7 +29,7 @@ const Footer = () => {
         <div className="py-12 lg:py-16">
           <div className="grid md:grid-cols-3 gap-12">
             {/* Brand */}
-            <motion.div 
+            <motion.div
               className="space-y-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -37,15 +37,16 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
             >
               <a href="#hero" onClick={(e) => scrollToSection(e, '#hero')} className="flex items-center gap-2 group">
-                <motion.div 
-                  className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center"
+                <motion.div
+                  className="flex items-center justify-center"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                 >
-                  <Code2 className="w-5 h-5 text-white" />
+                  <img
+                    src="/logo.png"
+                    alt="well"
+                    className="w-32 h-32 sm:w-24 sm:h-24" />
                 </motion.div>
-                <span className="text-white font-semibold text-lg">
-                  Dawit<span className="text-cyan-400">.</span>dev
-                </span>
+
               </a>
               <p className="text-gray-500 text-sm max-w-xs">
                 Full-Stack & Mobile Developer passionate about building beautiful, functional applications that solve real problems.
